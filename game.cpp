@@ -14,10 +14,10 @@ extern bool game_over;
 bool food = true;
 
 std::deque<std::pair<int, int>> snake_body = {std::make_pair(20, 20), 
-											  std::make_pair(20, 21),
-	                                          std::make_pair(20, 22), 
-	                                          std::make_pair(20, 23),
-	                                          std::make_pair(20, 24)};
+											  std::make_pair(19, 20),
+	                                          std::make_pair(18, 20), 
+	                                          std::make_pair(17, 20),
+	                                          std::make_pair(16, 20)};
 
 void Unit(int, int);
 
