@@ -29,8 +29,6 @@ int main(int argc, char **argv) {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
 	//glutInitWindowPosition();
-	Grid grid(kColumns, kRows);
-	Snake snake(&grid);
 	glutInitWindowSize(500, 500);
 	glutCreateWindow("SNAAAAAAAKE");
 	glutDisplayFunc(DisplayCallback);
@@ -47,10 +45,8 @@ int main(int argc, char **argv) {
 void DisplayCallback() {
 	glClear(GL_COLOR_BUFFER_BIT);
 	DrawBorder();
-	//DrawGrid();
 	DrawSnake();
 	DrawFood();
-	//printf("moi\n");
 	glutSwapBuffers();
 	if (game_over == true) {
 		std::string score_str = std::to_string(score);

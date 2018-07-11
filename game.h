@@ -11,32 +11,9 @@ const int kRight = 6;
 const int kMaxSnakeLength = 60;
 
 void InitGrid(int, int);
-void DrawGrid();
 void DrawBorder();
 void DrawSnake();
 void DrawFood();
 
-class Grid {
-public:
-	Grid(int x_size, int y_size);
-	void DrawGrid();
-	std::pair<int, int> GetDimensions();
-private:
-	int width;
-	int height;
-	void Unit(int x, int y);
-};
-
-class Snake {
-  public:
-	  Snake() = delete;
-	  Snake(Grid* grid);
-	  void DrawSnake();
-  private:
-	  int x_pos;
-	  int y_pos;
-	  Grid* board;
-	  int direction;
-};
 
 #endif
