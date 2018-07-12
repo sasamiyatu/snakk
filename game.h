@@ -1,7 +1,6 @@
 #ifndef GAME_H_INCLUDED
 #define GAME_H_INCLUDED
 
-#include <utility>
 
 const int kUp = 8;
 const int kDown = 2;

@@ -1,5 +1,7 @@
-#include <GL\glew.h>
-#include <GL\freeglut.h>
+#include <stdlib.h>
+#include <GL/glut.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
 #include "game.h"
 #include <utility>
 #include <ctime>
@@ -13,11 +15,12 @@ int snake_direction = kRight;
 extern bool game_over;
 bool food = true;
 
-std::deque<std::pair<int, int>> snake_body = {std::make_pair(20, 20), 
-											  std::make_pair(19, 20),
-	                                          std::make_pair(18, 20), 
-	                                          std::make_pair(17, 20),
-	                                          std::make_pair(16, 20)};
+
+std::deque<std::pair<int, int> > snake_body = {std::make_pair(20, 20), 
+                                               std::make_pair(19, 20),
+	                                        std::make_pair(18, 20), 
+	                                        std::make_pair(17, 20),
+	                                        std::make_pair(16, 20)};
 
 void Unit(int, int);
 
@@ -57,7 +60,7 @@ void DrawSnake() {
 		snake_body.pop_back();
 	}
 	glColor3f(0.0, 0.0, 0.0);
-	for (std::deque<std::pair<int, int>>::iterator it = snake_body.begin(); it != snake_body.end(); ++it) {
+	for (std::deque<std::pair<int, int> >::iterator it = snake_body.begin(); it != snake_body.end(); ++it) {
 		glRectd(it->first, it->second, it->first + 1, it->second + 1);
 	}
 	if (snake_body.front().first == 0 || snake_body.front().first == grid.first - 1 || 
@@ -65,7 +68,7 @@ void DrawSnake() {
 		game_over = true;
 		return;
 	}
-	for (std::deque<std::pair<int, int>>::iterator it = snake_body.begin() + 1; it != snake_body.end(); ++it) {
+	for (std::deque<std::pair<int, int> >::iterator it = snake_body.begin() + 1; it != snake_body.end(); ++it) {
 		if (snake_body.front().first == it->first && snake_body.front().second == it->second) {
 			game_over = true;
 			return;

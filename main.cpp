@@ -1,6 +1,7 @@
-#include <Windows.h>
-#include <GL\glew.h>
-#include <GL\freeglut.h>
+#include <stdlib.h>
+#include <GL/glut.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
 #include <iostream>
 #include <string>
 #include "game.h"
@@ -51,7 +52,8 @@ void DisplayCallback() {
 	if (game_over == true) {
 		std::string score_str = std::to_string(score);
 		std::string str = "Your score was: " + score_str;
-		MessageBox(NULL, str.c_str(), "GAME OVER", 0);
+		//MessageBox(NULL, str.c_str(), "GAME OVER", 0);
+		std::cout << str << std::endl;
 		exit(0);
 	}
 }
